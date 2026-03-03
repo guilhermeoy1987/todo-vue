@@ -1,47 +1,60 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import { reactive } from 'vue'
+import Cabecalho from './components/Cabecalho.vue'
+import Formulario from './components/Formulario.vue'
+import ListaDeTarefas from './components/ListaDeTarefas.vue'
+
+const estado = reactive({
+  filtro: "todas",
+  tarefaTemp: '',
+  tarefas: [
+    { titulo: "Estudar ES6", finalizado: false },
+    { titulo: "Estudar SASS", finalizado: false },
+    { titulo: "Ir para a academia", finalizado: true }
+  ]
+})
+
+const getTarefasPendentes = () => {
+  return estado.tarefas.filter(t => !t.finalizado)
+}
+
+const getTarefasFinalizadas = () => {
+  return estado.tarefas.filter(t => t.finalizado)
+}
+
+const getTarefasFiltradas = () => {
+  switch (estado.filtro) {
+    case 'pendentes':
+      return getTarefasPendentes()
+    case 'finalizadas':
+      return getTarefasFinalizadas()
+    default:
+      return estado.tarefas
+  }
+}
+
+const cadastraTarefa = () => {
+  if (!estado.tarefaTemp.trim()) return
+
+  estado.tarefas.push({
+    titulo: estado.tarefaTemp,
+    finalizado: false
+  })
+
+  estado.tarefaTemp = ''
+}
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <div class="container">
+    <Cabecalho :tarefas-pendentes="getTarefasPendentes().length" />
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
+    <Formulario
+      v-model="estado.tarefaTemp"
+      :cadastra-tarefa="cadastraTarefa"
+      :trocar-filtro="evento => estado.filtro = evento.target.value"
+    />
 
-  <main>
-    <TheWelcome />
-  </main>
+    <ListaDeTarefas :tarefas="getTarefasFiltradas()" />
+  </div>
 </template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
