@@ -36,3 +36,19 @@ npm run dev
 ```sh
 npm run build
 ```
+
+# Lista de Tarefas (To-Do List) com Vue.js - EBAC
+
+Este repositório contém o desenvolvimento de uma aplicação funcional de gerenciamento de tarefas, focada no aprendizado de reatividade e diretivas do Vue.js.
+
+## O que foi realizado:
+* **Gerenciamento Reativo:** Implementação de estado dinâmico para adição e remoção de tarefas em tempo real.
+* **Diretivas do Vue:** Uso de v-for, v-if e v-model para controle de fluxo e vinculação de dados.
+* **Interface Dinâmica:** Estilização condicional baseada no status de conclusão das tarefas.
+* **Manipulação de Eventos:** Captura de interações do usuário para controle da lógica de negócio.
+
+## Tecnologias:
+* Vue.js
+* JavaScript (ES6+)
+* HTML5 / CSS3
+* Git / GitHub
