@@ -1,23 +1,18 @@
-# todo-vue
+# Agenda de Contatos com Vue.js - EBAC
 
-This template should help get you started developing with Vue 3 in Vite.
+Este repositório apresenta uma evolução da aplicação To-Do, transformada em uma agenda funcional para gerenciamento de contatos e informações.
 
-## Recommended IDE Setup
+## O que foi realizado:
+* **Gerenciamento de Contatos:** Criação de sistema para adicionar, editar e remover múltiplos campos de informação.
+* **Filtro em Tempo Real:** Uso de Computed Properties para busca dinâmica na lista de contatos.
+* **Vinculação Bidirecional:** Implementação de v-model para sincronia instantânea entre formulário e estado.
+* **Validação de Dados:** Lógica de controle para garantir a integridade das informações cadastradas.
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Recommended Browser Setup
-
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Tecnologias:
+* Vue.js
+* JavaScript (ES6+)
+* HTML5 / CSS3
+* Git / GitHub (Branch: agenda)
 
 ## Project Setup
 
